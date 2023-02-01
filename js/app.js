@@ -1,10 +1,22 @@
+
+
+var scroll = new SmoothScroll('a[data-scroll]', {
+  speed: 1000,
+   speedAsDuration: true
+});
+
+
+
 let myNavBar = document.getElementById("navbar");
+
+
 myNavBar.style.cssText ="display:flex; align-items:center;justify-content:space-between";
 let logo = document.createElement("div");
 let logoImage = document.createElement("img");
 let textLogo = document.createTextNode("ZAHID");
 logo.appendChild(logoImage);
 logo.appendChild(textLogo);
+
 myNavBar.appendChild(logo);
 
 logoImage.src="../Go_Logo_Black.svg.png";
@@ -15,8 +27,6 @@ logo.style.cssText = "color:red;font-size:30px;font-family:Arial, Helvetica, san
 
 let myUl = document.createElement("ul");
 myUl.setAttribute("id", "myUL");
-// myNavBar.appendChild(myUl);
-
 let listArray = [
   "Home",
   "Team",
@@ -48,6 +58,7 @@ for (let i = 0; i < listArray.length; i++) {
   myLi.appendChild(myLink);
   myUl.appendChild(myLi);
   myLink.href = `#${listOfId[i]}`;
+  myLink.setAttribute("data-scroll","");
   myLi.style.cssText = "display:inline-block;margin:0; inline-height:70px;"
   myLink.style.cssText= "font-size:18px;text-transform:uppercase;font-weight:bold;color:white;padding:21px;text-decoration:none;"
 
@@ -61,30 +72,8 @@ for (let i = 0; i < listArray.length; i++) {
     myLink.style.background="transparent"
   });
 
-  // const sections = document.querySelectorAll('section');
-  // window.addEventListener('scroll',()=>{
-  //   let current = '';
-  //   sections.forEach(section=>{
-  //     const sectionTop= section.offsetTop;
-  //     const sectionHeight= section.clientHeight;
-  //     if(pageYOffset >=(sectionTop-sectionHeight/3)){
-  //       current= section.getAttribute('id');
-  //     }
-  //   })
-
-  //   myLi.forEach(li=>{
-  //     li.classList.remove('active-nav');
-  //     if(li.classList.contains(current)){
-  //       li.classList.add('active-nav')
-  //     }
-  //   })
-
-
-  // })
 
   
-
-
 }
 myUl.style.cssText = "float: right;margin-right:10px";
 myNavBar.appendChild(myUl);
@@ -273,10 +262,10 @@ firstSection.appendChild(paragraph);
 
 
     let FirstCard = document.createElement("div");
-    FirstCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin-bottom:3%;margin-top:3%";
+    FirstCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin:3% 13%;justify-content:space-around;width:78%";
     for(let l=1; l<5; l++){
     let Card = document.createElement("div");
-    Card.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;margin-left:8%";
+    Card.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;";
     let CardImage= document.createElement("div");
     CardImage.style.cssText="background-color:rgb(82, 81, 81);width:70%;height:100px;color:white;text-transform:capitalize;font-weight:bold;font-size:20px;padding:55px 1px;text-align:center;outline:2px solid rgb(82, 81, 81);border:3px solid grey;"
     let CardImageText = document.createTextNode("cover placeholder image"); 
@@ -304,12 +293,15 @@ firstSection.appendChild(paragraph);
 
     
     let secondCard = document.createElement("div");
-    secondCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin-bottom:3%;margin-top:3%;";
+    secondCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin:3% 13%;justify-content:space-around;width:78%";
+    
     for(let l=1; l<5; l++){
     let Card2 = document.createElement("div");
-    Card2.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;margin-left:8%";
+    Card2.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;";
+    
     let CardImage2= document.createElement("div");
     CardImage2.style.cssText="background-color:rgb(82, 81, 81);width:70%;height:100px;color:white;text-transform:capitalize;font-weight:bold;font-size:20px;padding:55px 1px;text-align:center;outline:2px solid rgb(82, 81, 81);border:3px solid grey;"
+   
     let CardImageText2 = document.createTextNode("cover placeholder image"); 
     CardImage2.appendChild(CardImageText2);
     let CardTitle2 = document.createElement("p");
@@ -334,10 +326,11 @@ firstSection.appendChild(paragraph);
 
     
     let thirdCard = document.createElement("div");
-    thirdCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin-bottom:3%;margin-top:3%;";
+    thirdCard.style.cssText = "display: flex;flex-direction:row;align-items:center;margin:3% 12%;justify-content:space-around;width:59%;";
+    
     for(let l=1; l<4; l++){
     let Card3 = document.createElement("div");
-    Card3.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;margin-left:8%";
+    Card3.style.cssText = "display: flex;flex-direction:column;align-items:center;gap:10px ;";
     let CardImage3= document.createElement("div");
     CardImage3.style.cssText="background-color:rgb(82, 81, 81);width:70%;height:100px;color:white;text-transform:capitalize;font-weight:bold;font-size:20px;padding:55px 1px;text-align:center;outline:2px solid rgb(82, 81, 81);border:3px solid grey;"
     let CardImageText3 = document.createTextNode("cover placeholder image"); 
@@ -388,7 +381,7 @@ forthSection.appendChild(paragraphSectionFour);
 let myDiv = document.createElement('div');
 let myDivText = document.createTextNode("order sample");
 myDiv.appendChild(myDivText);
-// myDiv.style.cssText = "display:flex ;width:100%";
+ 
 let btn = document.createElement('button');
 
 btn.appendChild(myDiv);
@@ -424,24 +417,25 @@ fiveSection.appendChild(DivContainerFiveSection);
 // append to contact
 
 let contact =document.getElementById("contact");
-contact.style.cssText="background-color:grey;text-align:center;padding:3% 0;color:white;";
+contact.style.cssText=" background-color: rgb(187, 187, 187);text-align:center;padding:2% 0;color:white;";
 let titleOfContact = document.createElement("h1");
 let titleOfContactText = document.createTextNode("Get in touch");
-titleOfContact.style.cssText="font-size:35px;margin-bottom:2%"
+titleOfContact.style.cssText="font-size:35px;margin-bottom:2%";
 titleOfContact.appendChild(titleOfContactText);
 contact.appendChild(titleOfContact);
 let form = document.createElement("form");
-form.style.cssText ="display:flex;flex-direction:column;gap:1%;width:50%;margin-left:22%;padding-left:10%"
+form.style.cssText ="display:flex;flex-direction:column;gap:1%;width:60%;margin-left:30%;"
 let divForm1 = document.createElement("div");
-divForm1.style.cssText ="display:flex;flex-direction:row;gap:20%;padding-left:3%"
+divForm1.style.cssText ="display:flex;flex-direction:row;gap:10%;"
 let divInp1 = document.createElement("div");
 divInp1.style.cssText ="display:flex;flex-direction:column;align-items:center;gap:7px ;"
 let label1 = document.createElement("label");
 let labelText1 = document.createTextNode("First Name :");
 label1.appendChild(labelText1);
+label1.style.cssText="margin-right:70% ;width:100px;font-weight:900;"
 divInp1.appendChild(label1);
 let inp = document.createElement("input");
-inp.style.cssText ="width:100%;padding:4% 30%;outline:none;border-color: white"
+inp.style.cssText ="width:260px;padding:4% 2%;outline:none;border-color: white"
 inp.type="text";
 inp.placeholder="Enter First Name";
 divInp1.appendChild(inp);
@@ -452,12 +446,13 @@ divInp2.style.cssText ="display:flex;flex-direction:column;align-items:center;ga
 let label2 = document.createElement("label");
 let labelText2 = document.createTextNode("Last Name :");
 label2.appendChild(labelText2);
+label2.style.cssText="margin-right:70% ;width:100px;font-weight:900"
 divInp2.appendChild(label2);
 let inp2 = document.createElement("input");
 inp2.type="text";
 inp2.placeholder="Enter Last Name";
 divInp2.appendChild(inp2);
-inp2.style.cssText ="width:100%;padding:4% 30%;outline:none;border-color: white"
+inp2.style.cssText ="width:260px;padding:4% 2%;outline:none;border-color: white"
 divForm1.appendChild(divInp1);
 divForm1.appendChild(divInp2);
 form.appendChild(divForm1);
@@ -472,9 +467,10 @@ divForm2.style.cssText ="display:flex;flex-direction:column;align-items:center;g
 let label3 = document.createElement("label");
 let labelText3 = document.createTextNode("Email Address:");
 label3.appendChild(labelText3);
+label3.style.cssText="margin-right:85% ;width:150px;font-weight:900"
 divForm2.appendChild(label3);
 let inp3 = document.createElement("input");
-inp3.style.cssText ="width:78%;outline:none;border-color: white;padding:1% 16%;"
+inp3.style.cssText ="width:590px;outline:none;border-color: white;padding:0 2%;margin-right:20px;height:40px"
 inp3.type="email";
 inp3.placeholder="Enter your Email";
 divForm2.appendChild(inp3);
@@ -488,9 +484,10 @@ divForm3.style.cssText ="display:flex;flex-direction:column;align-items:center;g
 let label4 = document.createElement("label");
 let labelText4 = document.createTextNode("Your Message:");
 label4.appendChild(labelText4);
+label4.style.cssText="margin-right:85% ;width:150px;font-weight:900"
 divForm3.appendChild(label4);
 let inp4 = document.createElement("input");
-inp4.style.cssText ="width:78%;outline:none;border-color: white;padding:8% 16%;"
+inp4.style.cssText ="width:610px;outline:none;border-color: white;margin-right:25px;height:50px;padding-bottom:30px;padding-left:2%"
 inp4.type="textarea";
 inp4.placeholder="How we can help you?:)";
 divForm3.appendChild(inp4);
@@ -504,7 +501,7 @@ let btn2 = document.createElement('button');
 btn2.appendChild(myDivOfBtn);
 contact.appendChild(btn2);
 myDivOfBtn.style.cssText="background-color:red;color:white;font-size:20px; font-weight:600;text-transform:capitalize;display:flex;display:flex ;width:100%"
-btn2.style.cssText="background-color:red;color:white;border-radius:5px;width:14%;padding:1% 0%;border-radius:5px;border-color:transparent;padding-left:2%;justify-content:center;margin-right:26%;margin-top:2%;"
+btn2.style.cssText="background-color:red;color:white;border-radius:5px;width:14%;padding:1% 0%;border-radius:5px;border-color:transparent;padding-left:2%;justify-content:center;margin-right:27%;margin-top:2%;"
 
 
 // append to footer
